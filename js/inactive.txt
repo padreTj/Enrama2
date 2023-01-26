@@ -1,0 +1,21 @@
+function inactivityTime() {
+    var time;
+    window.onload = resetTimer;
+    document.onmousemove = resetTimer;
+    document.onkeypress = resetTimer;
+    document.onmousedown = resetTimer; // touchscreen presses
+    document.ontouchstart = resetTimer;
+    document.onclick = resetTimer;     // touchpad clicks
+    document.onkeypress = resetTimer;
+
+    function logout() {
+        alert("You are now logged out.")
+        //código para cerrar sesión o realizar otra acción 
+        //fLogin();
+    }
+
+    function resetTimer() {
+        clearTimeout(time);
+        time = setTimeout(logout, 15000);  // 15 seconds
+    }
+}
